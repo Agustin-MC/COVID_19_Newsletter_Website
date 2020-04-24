@@ -1,6 +1,12 @@
 @extends('layouts.app')
 @section('content')
-    <h1>Home</h1>
+    <h1><p> <span id="datetime"></span></p>
+        <script>
+            let dt = new Date();
+            document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+        </script>
+    </h1>
+
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda ipsa, iste minus nihil nulla quidem vel velit voluptates! Animi asperiores deleniti inventore magnam nemo provident quod veritatis. Deleniti, id, nemo.</p>
 
 @endsection

@@ -5,3 +5,9 @@
         </div>
     @endforeach
 @endif
+
+@if(session('success'))
+    <div class="aler alert-success">
+        {{session('success')}}
+    </div>
+@endif
