@@ -26,7 +26,7 @@ class MessagesController extends Controller
     }
 
     public function getMessages(){
-        $messages = Message::all();
+        $messages = Message::orderBy('id','DESC')->get();
         return view('home')->with('messages', $messages);
     }
 }

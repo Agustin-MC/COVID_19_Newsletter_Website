@@ -1,23 +1,32 @@
 @extends('layouts.app')
 @section('content')
-    <h1><p> <span id="datetime"></span></p>
-        <script>
-            let dt = new Date();
-            document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
-        </script>
-        @if(count($messages) > 0)
-            @foreach($messages as $message)
-                <ul class="list-group text">
-                    <li class="list-group-item">Date: {{$message->created_at}}</li>
-                    <li class="list-group-item">Name: {{$message->name}}</li>
-                    <li class="list-group-item">Message: {{$message->message}}</li>
-                </ul>
-            @endforeach
-        @endif
-    </h1>
+    <script>
+        let dt = new Date();
+        document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+    </script>
+
+    <div class="text-sm-left container">
+        <div class="container">
+            <h1>Blog Posts</h1>
+            <p class="lead"></p>
+            <div class="col-md-12 blog-main">
+                <h5 class="pb-3 mb-4 font-italic border-bottom">From the Public</h5>
+
+                @if(count($messages) > 0)
+                    @foreach($messages as $message)
+                        <div class="blog-post">
+                            <h5 class="blog-post-title initialism"> {{$message->created_at}} ...by {{$message->name}}</h5>
+                            <h2 class="py-lg-2">{{$message->message}}</h2>
+                            <hr>
+                        </div>
+
+                    @endforeach
+                @endif
+
+            </div>
+        </div>
+    </div>
 @endsection
-
-
 
 @section('sidebar')
     @parent
