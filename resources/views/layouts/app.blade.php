@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Acme</title>
+        <title>COVID 19 Newsletter</title>
         <link rel="stylesheet" href="/css/app.css">
     </head>
     <body>
@@ -22,8 +22,8 @@
                 </div>
             </div>
         </div>
-    <footer id="footer" class="text-center">
-        <p>Copyright 2020 &copy; Agustin</p>
+    <footer class="text-center footer" >
+        Copyright 2020 &copy Agustin
     </footer>
     </body>
 </html>
