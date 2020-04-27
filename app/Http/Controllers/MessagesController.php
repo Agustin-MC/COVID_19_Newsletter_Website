@@ -12,6 +12,7 @@ class MessagesController extends Controller
             'name' => 'required',
             'email' =>'required'
         ]);
+
         // Create New Message
         $message = new Message;
         $message->name = $request->input('name');
@@ -22,5 +23,10 @@ class MessagesController extends Controller
 
         //Redirect
         return redirect('/')->with('success', 'Message Sent');
+    }
+
+    public function getMessages(){
+        $messages = Message::all();
+        return view('home')->with('messages', $messages);
     }
 }
